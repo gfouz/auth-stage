@@ -1,0 +1,71 @@
+@use '../layout/flex' as *;
+
+.fluid-grid {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'card1'
+    'card2'
+    'card3'
+    'card4'
+    'navbar'
+    'footer';
+  grid-template-columns: 1fr;
+
+  @media (min-width: 550px) {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'header  header'
+        'main    main'
+        'card1    card2'
+        'card3    card4'
+        'navbar  navbar'
+        'footer  footer';
+    }
+  }
+
+  @media (min-width: 700px) {
+    & {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        'header  header  header'
+        'main    main    main'
+        'card1   card2  card3'
+        'navbar  navbar  card4'
+        'footer  footer  footer';
+    }
+  }
+}
+
+.fluid-grid__header {
+  grid-area: header;
+  @extend .flex-row-center;
+  width: 100%;
+  height: 60px;
+}
+.fluid-grid__footer {
+  grid-area: footer;
+  @extend .flex-row-center;
+  width: 100%;
+  height: 60px;
+}
+.fluid-grid__main {
+  grid-area: main;
+}
+.fluid-grid__card1 {
+  grid-area: card1;
+}
+.fluid-grid__card2 {
+  grid-area: card2;
+}
+.fluid-grid__card3 {
+  grid-area: card3;
+}
+.fluid-grid__card4 {
+  grid-area: card4;
+}
+.fluid-grid__navbar {
+  grid-area: navbar;
+}

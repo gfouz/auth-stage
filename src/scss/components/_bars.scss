@@ -1,0 +1,16 @@
+@use '../layout/flex' as *;
+
+.header {
+  @extend .flex-row-center;
+  width: 100%;
+  background-color: #444444;
+}
+.footer {
+  @extend .header;
+}
+.expanding-bar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

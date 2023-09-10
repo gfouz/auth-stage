@@ -1,0 +1,13 @@
+@use '../layout/flex' as *;
+@use '../abstracts/variables' as *;
+
+@mixin form {
+  @include flex-column-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-width: 270px;
+  min-height: 450px;
+  padding: 1rem;
+  box-shadow: 1px 1px 10px #222222;
+  border-radius: $radius;
+}

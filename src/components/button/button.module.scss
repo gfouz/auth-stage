@@ -1,0 +1,55 @@
+@mixin container {
+  position: absolute;
+  right: 0.1em;
+  top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 10;
+  outline: none;
+  border: none;
+}
+.bar {
+  width: 1.7rem;
+  height: 0.2rem;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  transform-origin: 0;
+}
+.opened {
+  @include container;
+  :first-child {
+    transform: rotate(50deg);
+  }
+
+  :nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  :nth-child(3) {
+    transform: rotate(-50deg);
+  }
+}
+
+.closed {
+  @include container;
+  :first-child {
+    transform: rotate(0);
+  }
+
+  :nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  :nth-child(3) {
+    transform: rotate(0);
+  }
+}

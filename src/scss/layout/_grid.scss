@@ -1,0 +1,33 @@
+@use '../abstracts/mixins.scss' as *;
+
+.grid-section {
+  display: grid;
+  grid-auto-rows: minmax(150px, auto);
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+}
+
+@mixin grid-center() {
+  display: grid;
+  place-items: center;
+}
+
+@mixin grid-any-columns($width: 250) {
+  @extend .grid-section;
+  grid-template-columns: repeat(auto-fit, minmax($width + px, 1fr));
+}
+
+@mixin grid-two-columns($breakpoint: 768) {
+  $width: calc($breakpoint / 2) + px;
+  @extend .grid-section;
+  grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+}
+@mixin grid-three-columns($breakpoint: 768) {
+  $width: calc($breakpoint / 3) + px;
+  @extend .grid-section;
+  grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+}
+@mixin grid-four-columns($breakpoint: 768) {
+  $width: calc($breakpoint / 4) + px;
+  @extend .grid-section;
+  grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+}

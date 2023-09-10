@@ -1,0 +1,32 @@
+@use '../../scss/styles.scss' as *;
+
+.postList {
+  width: 100%;
+  text-align: left;
+  color: #f1f1f1;
+  @extend .flex-row-wrap;
+}
+.list_item {
+  color: #f1f1f1;
+  list-style-type: none;
+  margin-block-start: 0.5em;
+  display: flex;
+  width: 300px;
+  height: 150px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+.list_data {
+  width: 150px;
+  height: 100%;
+  padding: 1em;
+  color: white;
+  background-color: #111b24;
+  @media (max-width: 600px) {
+    width: 50%;
+  }
+  & :nth-child(2) {
+    margin-block-start: 2em;
+  }
+}

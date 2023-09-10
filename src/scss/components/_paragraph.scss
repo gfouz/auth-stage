@@ -1,0 +1,6 @@
+/*$primary-font-family: Source Sans Pro, sans-serif;*/
+
+@mixin paragraph($alignment: left) {
+  text-align: $alignment;
+  font-size: clamp(1.3rem, 1.4vw, 2.5rem);
+}

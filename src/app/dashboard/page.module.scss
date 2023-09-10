@@ -1,0 +1,57 @@
+@use '../../scss/styles.scss' as *;
+@use '../../scss/abstracts/variables' as *;
+
+.contact {
+  @extend .flex-center-xy;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  border: 1px solid white;
+}
+
+.contact__requestMessage {
+  color: #f1f1f1;
+  letter-spacing: 1px;
+}
+
+.downwards {
+  align-self: flex-start;
+  color: #f1f1f1;
+  animation: down 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.normal {
+  align-self: flex-start;
+  color: #f1f1f1;
+  animation: reset 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+@keyframes reset {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.postlist {
+}
+.form_button {
+  width: 140px;
+  padding: 0.5rem 2em;
+}

@@ -1,0 +1,3 @@
+@mixin x-padding($space: 1) {
+  padding: #{$space}rem 0;
+}

@@ -1,0 +1,9 @@
+@use 'scss-components/buttons' as *;
+@use 'scss/abstracts/mixins.scss' as *;
+
+.selectorButton {
+  @include button(#ffffff, #222222);
+  @include flex-center;
+  height: 30px;
+  width: 100px;
+}

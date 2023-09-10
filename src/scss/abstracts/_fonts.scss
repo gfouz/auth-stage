@@ -1,0 +1,10 @@
+.helvetica-font {
+  @font-face {
+    font-family: helvetica;
+    src:
+      local('helvetica'),
+      url('../../../public/fonts/helvetica.otf') format('opentype');
+    font-weight: bolder;
+    font-display: block;
+  }
+}

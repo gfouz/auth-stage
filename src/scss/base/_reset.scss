@@ -1,0 +1,75 @@
+@use '../abstracts/variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  $brown: brown;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+  font-family:
+    Times New Roman,
+    Verdana;
+  font-size: 16px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+button {
+  cursor: pointer;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0 auto;
+  height: 100%;
+  max-width: 1300px;
+  min-height: 100vh;
+}
+.text-info {
+  color: $info;
+}
+.text-dark {
+  color: $dark;
+}
+.text-light {
+  color: $light;
+}
+.text-primary {
+  color: $primary;
+}
+.text-secondary {
+  color: $secondary;
+}
+.text-success {
+  color: $success;
+}
+.text-warning {
+  color: $warning;
+}
+.text-danger {
+  color: $danger;
+}

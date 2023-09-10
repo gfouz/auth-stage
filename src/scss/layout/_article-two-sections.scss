@@ -1,0 +1,9 @@
+@use 'scss/layout/flex' as *;
+@use 'scss/layout/section' as *;
+
+.article-container {
+  @include grid-two-columns(750);
+}
+.article__section {
+  @extend .section;
+}
