@@ -8,4 +8,4 @@ export const formDataSchema = z.object({
   password: z.string().min(6, { message: 'password must be 6 as min' }),
 });
 
-export type FormData = z.infer<typeof dataSchema>;
+export type FormData = z.infer<typeof formDataSchema>;

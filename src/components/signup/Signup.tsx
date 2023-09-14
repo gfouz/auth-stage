@@ -1,6 +1,6 @@
 'use client';
-import { z } from 'zod';
-import { useState, useEffect } from 'react';
+import { TypeOf, z } from 'zod';
+import { useState, useEffect, ReactNode } from 'react';
 import { redirect } from 'next/navigation';
 import { useMutation } from 'react-query';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -25,7 +25,9 @@ export default function SignUp() {
     resolver: zodResolver(formDataSchema),
   });
 
-  const response = useMutation((data: IFormInput) => signupService(data));
+
+  const passwordError: typeof errors | ReactNode = errors.password?.message;
+  const response = useMutation((data: FormData) => signupService(data));
   const onSubmit: SubmitHandler<FormData> = (data: FormData) => {
     response.mutateAsync(data);
   };
@@ -64,7 +66,7 @@ export default function SignUp() {
         />
         <FormHelperText>We'll never share your email.</FormHelperText>
       </FormControl>
-
+      {errors.email?.message && <p className={s.error_message}>{passwordError}</p>}
 
       <label className={s.input_label} htmlFor="email">
         Your email
