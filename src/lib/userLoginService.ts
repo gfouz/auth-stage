@@ -11,7 +11,7 @@ export async function userLoginService(data: FormData) {
       },
     });
 
-    console.log("this is response", {await response.json()});
+    console.log('this is response', { data: await response.json() });
   } catch (error) {
     return error;
   }

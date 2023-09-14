@@ -30,7 +30,7 @@ export const authOptions: NextAuthOptions = {
           return new Response(`User does not exist!`, {
             status: 404,
             headers: { 'Content-Type': 'application/json' },
-        });
+          });
         }
         const passwordIsValid = await compare(
           credentials?.password!,

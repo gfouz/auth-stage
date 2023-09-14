@@ -8,6 +8,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import s from './Signup.module.scss';
 import { signupService } from '@/lib/signupService';
 import { formDataSchema, FormData } from '@/schemas/form.input.schema';
+import {
+  FormControl,
+  FormLabel, Input,
+  FormErrorMessage,
+  FormHelperText,
+} from '@chakra-ui/react'
 
 export default function SignUp() {
   const [code, setCode]= useState('')
@@ -47,6 +53,19 @@ export default function SignUp() {
       {errors.name?.message && (
         <p className={s.error_message}> name is required</p>
       )}
+
+
+      <FormControl>
+        <FormLabel htmlFor='email'>Email address</FormLabel>
+        <Input 
+          id='email' 
+          type='email' 
+          {...register('email')}
+        />
+        <FormHelperText>We'll never share your email.</FormHelperText>
+      </FormControl>
+
+
       <label className={s.input_label} htmlFor="email">
         Your email
       </label>

@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { NextAuthProvider } from './providers';
+import { ChakraProviders } from './chakraProvider';
 import QueryProvider from '@/lib/queryProvider';
 
 export const metadata: Metadata = {
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <QueryProvider>
-          <NextAuthProvider>{children}</NextAuthProvider>
+          <ChakraProviders>
+            <NextAuthProvider>{children}</NextAuthProvider>
+          </ChakraProviders>
         </QueryProvider>
       </body>
     </html>

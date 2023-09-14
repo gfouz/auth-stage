@@ -5,7 +5,7 @@ export const formDataSchema = z.object({
   email: z.string().email({
     message: 'Please enter a valid email address',
   }),
-  password: z.string().min(6, { message: 'password is required' }),
+  password: z.string().min(6, { message: 'password must be 6 as min' }),
 });
 
 export type FormData = z.infer<typeof dataSchema>;

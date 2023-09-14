@@ -8,8 +8,18 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id       Int     @id @default(autoincrement())
+  role     String  
+  name     String
+  email    String  @unique
   password String
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  url         String
+  name        String  @unique
+  image       String
+  price       Int
+  description String
 }
