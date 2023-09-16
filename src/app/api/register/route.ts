@@ -22,9 +22,14 @@ export async function POST(req: NextRequest) {
         password: hashedPassword,
       },
     });
-    user
-      ? NextResponse.json({ message: 'created' })
-      : NextResponse.json({ message: 'bad request!' });
+  
+     if(user){
+       //in order to avoid an error-1, you have to return the response!
+       return NextResponse.json({ message:"created", status:201 })
+     }else {
+       return NextResponse.json({message: 'failed on creating user'});
+     } 
+      
   } catch (error: any) {
     return customErrorHandler(error);
   }
@@ -42,5 +47,4 @@ export async function GET(req: Request) {
   }
 }
 
-// warn(prisma-client) This is the 10th instance of Prisma Client being started.
-//Make sure this is intentional.
+// error-1 TypeError: Cannot read properties of undefined (reading 'headers')

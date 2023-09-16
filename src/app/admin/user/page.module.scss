@@ -1,0 +1,16 @@
+@use '../../scss/styles.scss' as *;
+@use '../../scss/abstracts/variables' as *;
+
+.userAdmin_container {
+  @extend .flex-center-xy;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.userAdmin_table {
+  max-width: 600px;
+  min-height: 400px;
+}

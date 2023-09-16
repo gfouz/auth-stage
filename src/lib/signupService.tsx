@@ -14,6 +14,7 @@ export async function signupService(data: FormData) {
     const result = await response.json();
     return result;
   } catch (error) {
+    console.log("this is the horrible error" + error)
     return { Error_Message: `this error has been caused by: ${error} ` };
   }
 }
