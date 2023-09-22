@@ -23,7 +23,7 @@ export default function Homepage() {
           <p>{session.user.name}</p>
           <p>{session.user.email}</p>
           <button className={s.form_button} onClick={() => signOut()}>
-            Sign out
+            Sign out.
           </button>
         </>
       ) : (
@@ -31,6 +31,7 @@ export default function Homepage() {
           <Link href="http://localhost:3000/signup">Register now!</Link>
         </>
       )}
+      <Link href="http://localhost:3000/admin/user">User Admin</Link>
     </div>
   );
 }

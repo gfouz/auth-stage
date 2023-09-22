@@ -18,8 +18,6 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials, req) {
         const email = credentials?.email.toLowerCase();
-
-        await prisma.$connect();
         const user = await prisma.user.findUnique({
           where: {
             email: email,

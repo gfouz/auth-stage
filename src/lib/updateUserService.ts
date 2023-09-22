@@ -1,11 +1,11 @@
-import { FormData } from '@/schemas/form.input.schema.ts';
 import { useState } from 'react';
+import { UpdateUserInput } from '@/schemas/user.schema';
 
-export async function signupService(data: FormData) {
+export async function updateUserService(data: UpdateUserInput) {
   try {
-    const response = await fetch('http://localhost:3000/api/register', {
+    const response = await fetch('http://localhost:3000/api/admin/user', {
       cache: 'no-cache',
-      method: 'POST',
+      method: 'PUT',
       body: JSON.stringify(data),
       headers: {
         'content-type': 'application/json',

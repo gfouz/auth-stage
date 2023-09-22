@@ -1,7 +1,6 @@
 @use '@/scss/styles.scss' as *;
-@use '@/scss/abstracts/variables' as *;
 
-.userAdmin_container {
+.userInterface_container {
   @extend .flex-center-xy;
   display: flex;
   flex-direction: column;
@@ -9,12 +8,4 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
-}
-.userAdmin_table {
-  max-width: 600px;
-  min-height: 400px;
-}
-.table_row td {
-  padding: 1em;
-  border: 1px solid green;
 }

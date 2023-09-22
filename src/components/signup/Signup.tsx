@@ -10,14 +10,15 @@ import { signupService } from '@/lib/signupService';
 import { formDataSchema, FormData } from '@/schemas/form.input.schema';
 import {
   FormControl,
-  FormLabel, Input,
+  FormLabel,
+  Input,
   FormErrorMessage,
   FormHelperText,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 import { type } from 'os';
 
 export default function SignUp() {
-  const [code, setCode]= useState('')
+  const [code, setCode] = useState('');
   const {
     register,
     handleSubmit,
@@ -34,14 +35,12 @@ export default function SignUp() {
   const onSubmit: SubmitHandler<FormData> = (data: FormData) => {
     response.mutateAsync(data);
   };
-  console.log(response?.data)
-   const xx = response?.data?.PrismaCode;
-  useEffect(()=>{
-    
-      setCode('Invalid email:' + xx)
-  
-  }, [xx])
-  
+  console.log(response?.data);
+  const xx = response?.data?.PrismaCode;
+  useEffect(() => {
+    setCode('Invalid email:' + xx);
+  }, [xx]);
+
   return (
     <form className={s.contact__form} onSubmit={handleSubmit(onSubmit)}>
       <h2>Sign up{code}</h2>
@@ -50,39 +49,34 @@ export default function SignUp() {
         src="images/email.png"
         alt="dialog-icon"
       />
-      
+
       <FormControl>
-        <FormLabel htmlFor='name'>Your name</FormLabel>
-        <Input 
-          id='name' 
-          type='text' 
-          variant='flushed'
-          {...register('name')}
-        />
+        <FormLabel htmlFor="name">Your name</FormLabel>
+        <Input id="name" type="text" variant="flushed" {...register('name')} />
       </FormControl>
-      { nameError && <p className={s.error_message}>{nameError}</p>}
+      {nameError && <p className={s.error_message}>{nameError}</p>}
       <FormControl>
-        <FormLabel htmlFor='email'>Email address</FormLabel>
-        <Input 
-          id='email' 
-          type='email' 
-          variant='flushed'
+        <FormLabel htmlFor="email">Email address</FormLabel>
+        <Input
+          id="email"
+          type="email"
+          variant="flushed"
           {...register('email')}
         />
         <FormHelperText>We'll never share your email.</FormHelperText>
       </FormControl>
-      {emailError && <p className={s.error_message}>{ emailError }</p>}
+      {emailError && <p className={s.error_message}>{emailError}</p>}
 
       <FormControl>
-        <FormLabel htmlFor='email'>Your password</FormLabel>
-        <Input 
-          id='password' 
-          type='password' 
-          variant='flushed'
+        <FormLabel htmlFor="email">Your password</FormLabel>
+        <Input
+          id="password"
+          type="password"
+          variant="flushed"
           {...register('password')}
         />
       </FormControl>
-      {passwordError && <p className={s.error_message}>{ passwordError }</p>}
+      {passwordError && <p className={s.error_message}>{passwordError}</p>}
 
       <button className={s.submit_button} type="submit">
         Send

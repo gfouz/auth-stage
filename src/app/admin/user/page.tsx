@@ -1,30 +1,38 @@
 import s from './page.module.scss';
-import useFetch from '@/hooks/useFetch';
+//import { useQuery } from 'react-query';
 import { Key } from 'react';
+import UserInterface from 'components/userInterface/UserInterface';
 
-export default function UserAdmin() {
-  const[ data, loading, error ]= useFetch("/api/admin/user", undefined);
+const url = 'http://localhost:3000/api/admin/user';
+
+async function request(url: RequestInfo | URL, params: string) {
+  if (params) {
+    url = `/${url}/${params}`;
+  }
+  const data = await fetch(url, { cache: 'no-cache' });
+
+  const response = data.json();
+  //console.log( response )
+  return response;
+}
+
+export default async function AdminUser() {
+  const users = await request(url);
+  console.log(users);
   return (
-    <div className={s.userAdmin_container}>
-    
-      <table className={s.userAdmin_table}>
-        <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Email Address</th>
-        </tr>
-      {
-        data.length > 0 && data.map( (user: { id: Key | null | undefined; }) => (
-           <tr key={user?.id}>
-             <td>user?.name</td>
-             <td>user?.role</td>
-             <td>user?.email</td>
-           </tr>
-          ))
-      }
-        
-
-      </table>
-    </div>
+    <>
+      <UserInterface users={users} />
+    </>
   );
 }
+
+/*
+      const res = await fetch(url);
+      const response = await res.json();
+      const userlist = response?.users;
+
+      const { data, isLoading, isError } = useQuery('query-key', () =>
+      request(url),
+      );
+
+*/
