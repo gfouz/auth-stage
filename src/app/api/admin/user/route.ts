@@ -31,7 +31,7 @@ export async function PUT(req: Request) {
       },
     });
     if (updateUser) {
-      return NextResponse.json('updated');
+      return NextResponse.json({ message: 'updated' });
     }
   } catch (error) {}
 }

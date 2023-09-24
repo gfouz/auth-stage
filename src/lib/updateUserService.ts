@@ -1,4 +1,4 @@
-import { useState } from 'react';
+'use server';
 import { UpdateUserInput } from '@/schemas/user.schema';
 
 export async function updateUserService(data: UpdateUserInput) {
@@ -17,4 +17,5 @@ export async function updateUserService(data: UpdateUserInput) {
     console.log('this is the horrible error' + error);
     return { Error_Message: `this error has been caused by: ${error} ` };
   }
+  revalidateTag('user');
 }

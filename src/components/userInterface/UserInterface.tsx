@@ -1,5 +1,5 @@
 'use client';
-import { useState, Key } from 'react';
+import { useState } from 'react';
 import s from './UserInterface.module.scss';
 import UserEditor from './UserEditor';
 import UserTable from './UserTable';
@@ -30,7 +30,7 @@ export default function UserInterface({ users }: UserList) {
       {option ? (
         <UserTable users={users} clickHandler={clickHandler} />
       ) : (
-        <UserEditor user={user} />
+        <UserEditor user={user} setOption={setOption} />
       )}
     </div>
   );
