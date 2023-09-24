@@ -1,7 +1,7 @@
 {
-  "name": "next13",
+  "name": "authentication-stage",
   "version": "1.0.0",
-  "description": "",
+  "description": "In this project, we will explore everything we need to know about Server Actions.",
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
@@ -16,7 +16,7 @@
     "format": "npm run fix && npm run lint:fix"
   },
   "keywords": [],
-  "author": "",
+  "author": "Giovani Fouz Jiménez",
   "license": "ISC",
   "dependencies": {
     "@chakra-ui/next-js": "^2.1.5",

@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## What will you learn with auth-stage project?
 
-## Getting Started
+In this project, we will explore everything we need to know about Server Actions. If you’re not already familiar with Server Actions, here’s a simple description. Server Actions are a newly introduced feature in Next.js 13 that enables us to directly mutate data on the server from the frontend. The introduction of Server Actions eliminates the need for an additional API layer, simplifying the data mutation process.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Let us take things to the next level and build a nextJs application that will involve storing data in a database. For the data access layer, we will use Prisma ORM with a PostgreSQL database. So, without further delay, let’s dive into this project and explore Server and Client Actions in Next.js, with a life real example that also involves the following libraries: next-auth, react-hook-form, react-query, zod and others, this project shows how to use these libraries.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Data Fetching, Caching, and Revalidating
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Server Components and Route Handlers
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions#server-actions) are a feature in Next.js, built on top of React Actions. They enable server-side data mutations, reduced client-side JavaScript, and progressively enhanced forms. They can be defined inside Server Components and/or called from Client Components:
 
-## Learn More
+Since Server Components render on the server, you don't need to call a Route Handler from a Server Component to fetch data. Instead, you can fetch the data directly inside the Server Component.
+[See the Route Handler documentation for examples.](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
 
-To learn more about Next.js, take a look at the following resources:
+## Fetching Data on the Server with fetch
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next.js extends the native fetch Web API to allow you to configure the caching and revalidating behavior for each fetch request on the server. React extends fetch to automatically memoize fetch requests while rendering a React component tree.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can use fetch with async/await in [Server Components](https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md), [in Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers), [and in Server Actions.](https://nextjs.org/docs/app/building-your-application/data-fetching/forms-and-mutations)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
