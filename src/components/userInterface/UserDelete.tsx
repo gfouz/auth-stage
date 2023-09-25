@@ -1,7 +1,14 @@
 import { button } from '@chakra-ui/react';
+import { useMutation } from 'react-query';
+import { deleteUserService } from '@/lib/deleteUserService';
 import s from './UserDelete.module.scss';
 
-export default function UserDelete({ setToggle }) {
+
+export default function UserDelete({ setToggle, user }) {
+
+  const clickHandler = (user) => {
+      deleteUserService(user)
+  };
   return (
     <div className={s.userDelete_container}>
       <h2>Warning!</h2>
@@ -9,7 +16,7 @@ export default function UserDelete({ setToggle }) {
       <button
         className={s.delete_button}
         onClick={() => {
-          setToggle(false);
+          clickHandler(user)
         }}
       >
         Delete User

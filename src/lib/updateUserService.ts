@@ -12,13 +12,11 @@ export async function updateUserService(data: UpdateUserInput) {
         'content-type': 'application/json',
       },
     });
-     revalidateTag('user')
+    revalidateTag('user');
     const result = await response.json();
     return result;
-    
   } catch (error) {
     console.log('this is the horrible error' + error);
     return { Error_Message: `this error has been caused by: ${error} ` };
   }
-
 }

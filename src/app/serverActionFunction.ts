@@ -2,7 +2,6 @@
 import { revalidateTag } from 'next/cache';
 import { UpdateUserInput } from '@/schemas/user.schema';
 
-
 interface IData {
   title: string;
   author: string;
@@ -37,11 +36,8 @@ export async function updateUserService(data: UpdateUserInput) {
     revalidateTag('user');
     const result = await response.json();
     return result;
-    
   } catch (error) {
     console.log('this is the horrible error' + error);
     return { Error_Message: `this error has been caused by: ${error} ` };
   }
-
 }
-

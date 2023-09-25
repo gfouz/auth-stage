@@ -49,7 +49,7 @@ export default function UserEditor({ user, setOption }: UserEditorProps) {
     }
   }, [message]);
   return toggle ? (
-    <UserDelete setToggle={setToggle} />
+    <UserDelete setToggle={setToggle} user={user} />
   ) : (
     <div className={s.editor_container}>
       <button

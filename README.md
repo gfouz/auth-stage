@@ -3,7 +3,7 @@
 In this project, we will explore everything we need to know about Server Actions. If you’re not already familiar with Server Actions, here’s a simple description. Server Actions are a newly introduced feature in Next.js 13 that enables us to directly mutate data on the server from the frontend. The introduction of Server Actions eliminates the need for an additional API layer, simplifying the data mutation process.
 
 
-Let us take things to the next level and build a nextJs application that will involve storing data in a database. For the data access layer, we will use Prisma ORM with a PostgreSQL database. So, without further delay, let’s dive into this project and explore Server and Client Actions in Next.js, with a life real example that also involves the following libraries: next-auth, react-hook-form, react-query, zod and others, this project shows how to use these libraries.
+Let us take things to the next level and build a nextJs application that will involve storing data in a database. For the data access layer, we will use Prisma ORM with a PostgreSQL database. So, without further delay, let’s dive into this project and explore Server and Client Actions in Next.js, with a life real example that also involves the following libraries: next-auth, react-hook-form, react-query, zod, Chakra and others, this project shows how to use these libraries and the nextjs AppDir.
 
 ## Data Fetching, Caching, and Revalidating
 

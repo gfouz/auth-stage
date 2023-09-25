@@ -19,6 +19,7 @@ export default function UserInterface({ users }: UserList) {
   function clickHandler(user: User) {
     setUser({
       ...InitialState,
+      id: user.id,
       name: user.name,
       role: user.role,
       email: user.email,

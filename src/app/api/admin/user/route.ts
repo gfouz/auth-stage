@@ -5,24 +5,20 @@ import { RegisterUserSchema } from '@/schemas/user.schema';
 import { PrismaClient } from '@prisma/client';
 import { revalidateTag } from 'next/cache';
 
-
 const prisma = new PrismaClient();
 
 export async function GET(req: Request) {
   try {
     const users = await prisma.user.findMany();
-    
-    if (users) {
 
+    if (users) {
       return NextResponse.json(users);
     }
   } catch (error) {
     return customErrorHandler(error);
   }
-
 }
 export async function PUT(req: Request) {
-  
   const body = await req.json();
   const { name, role, email } = body;
   try {
@@ -36,11 +32,29 @@ export async function PUT(req: Request) {
         email: email,
       },
     });
-    
+
     if (updateUser) {
       return NextResponse.json({ message: 'updated' });
     }
   } catch (error) {}
+}
+
+export async function DELETE(req: Request) {
+  const body = await req.json();
+  console.log(body)
+  const { id } = body;
+  try {
+    const deleted = await prisma.user.delete({
+      where: {
+        id: Number(id),
+      },
+    });
+    if (deleted) {
+      return NextResponse.json({ message:"deleted" });
+    }
+  } catch (error) {
+    return customErrorHandler(error);
+  }
 }
 
 /* error TypeError: Cannot read properties of undefined (reading 'headers')
